@@ -1,0 +1,63 @@
+@use 'sass:color';
+@use 'sass:map';
+@use 'variables' as *;
+@use 'breakpoints';
+
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+body {
+  margin: 0;
+  background-color: map.get($colors, orange, light);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+
+  @media (max-width: map.get($breakpoints, 'sm')) {
+    font-size: 14px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  padding: .5em 0;
+  background-color: map.get($colors, blue, light);
+  color: map.get($colors, orange, light);
+  border: none;
+  border-radius: .30em;
+  cursor: pointer;
+  font-size: .75em;
+
+  &:hover {
+    background-color: color.adjust(map.get($colors, blue, light), $lightness: -10%);
+  }
+
+  &:active {
+    background-color: color.adjust(map.get($colors, blue, light), $lightness: -20%);
+  }
+}
+
+ul {
+  padding-inline-start: 2em;
+  margin-top: .5em;
+
+  li {
+    list-style-type: square;
+  }
+}
+
+.bg-light {
+  background-color: map.get($colors, orange, base);
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.5em;
+  color: map.get($colors, blue, base);
+}
+
+.subtitle {
+  font-weight: 600;
+  color: map.get($colors, blue, base);
+}
