@@ -1,9 +1,11 @@
 <script setup>
-import Education from '@/components/Education.vue';
+import Job from '@/components/Job.vue';
 import PersonalInfo from '@/components/PersonalInfo.vue';
-import Portfolio from '@/components/Portfolio.vue';
+import ResumeData from '@/assets/resume-data.json';
+import ResumeSection from '@/components/ResumeSection.vue';
 import Skills from '@/components/Skills.vue';
-import Work from '@/components/Work.vue';
+import Project from '@/components/Project.vue';
+import Education from '@/components/Education.vue';
 </script>
 
 <template>
@@ -18,22 +20,27 @@ import Work from '@/components/Work.vue';
 
     <hr>
 
-    // TODO - Combine Work/Porfolio/Eduction into component with slot for item
-    <div class="section">
-      <Work />
-    </div>
+    <ResumeSection :list="ResumeData.work" title="Work Experience">
+      <template v-slot="item">
+        <Job :item="item.item" />
+      </template>
+    </ResumeSection>
 
     <hr>
 
-    <div class="section">
-      <Portfolio />
-    </div>
+    <ResumeSection :list="ResumeData.portfolio" title="Portfolio">
+      <template v-slot="item">
+        <Project :item="item.item" />
+      </template>
+    </ResumeSection>
 
     <hr>
 
-    <div class="section">
-      <Education />
-    </div>
+    <ResumeSection :list="ResumeData.education" title="Education">
+      <template v-slot="item">
+        <Education :item="item.item" />
+      </template>
+    </ResumeSection>
   </div>
 </template>
 

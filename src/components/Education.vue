@@ -1,28 +1,23 @@
 <script setup>
-import ResumeData from '@/assets/resume-data.json';
 import OpenIcon from '@/assets/icons/open.svg';
 
-const education = ResumeData.education;
+const { item } = defineProps([ 'item' ]);
 </script>
 
 <template>
-  <div class="title">Education</div>
+  <div class="subtitle">{{ item.title }}</div>
 
-  <div v-for="(edu, i) in education" :key="`edu-${i}`">
-    <div class="subtitle">{{ edu.title }}</div>
+  <a v-if="item.link" :href="item.link" target="_blank" class="view-cred">
+    View Credential
+    <img :src="OpenIcon">
+  </a>
+  <div v-if="item.dates">{{ item.dates }}</div>
 
-    <a v-if="edu.link" :href="edu.link" target="_blank" class="view-cred">
-      View Credential
-      <img :src="OpenIcon">
-    </a>
-    <div v-if="edu.dates">{{ edu.dates }}</div>
-
-    <ul>
-      <li v-for="(pt, j) in edu.points" :key="`edu-${i}-pt-${j}`">
-        {{ pt.header }}<span v-if="pt.description">: {{ pt.description }}</span>
-      </li>
-    </ul>
-  </div>
+  <ul>
+    <li v-for="(pt, j) in item.points" :key="`${item.title}-pt-${j}`">
+      {{ pt.header }}<span v-if="pt.description">: {{ pt.description }}</span>
+    </li>
+  </ul>
 </template>
 
 <style scoped lang="scss">
