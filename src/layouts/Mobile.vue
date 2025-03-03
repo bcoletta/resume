@@ -1,6 +1,7 @@
 <script setup>
 import Education from '@/components/Education.vue';
 import PersonalInfo from '@/components/PersonalInfo.vue';
+import Portfolio from '@/components/Portfolio.vue';
 import Skills from '@/components/Skills.vue';
 import Work from '@/components/Work.vue';
 </script>
@@ -17,8 +18,15 @@ import Work from '@/components/Work.vue';
 
     <hr>
 
+    // TODO - Combine Work/Porfolio/Eduction into component with slot for item
     <div class="section">
       <Work />
+    </div>
+
+    <hr>
+
+    <div class="section">
+      <Portfolio />
     </div>
 
     <hr>

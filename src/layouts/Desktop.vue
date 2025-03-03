@@ -3,6 +3,7 @@ import Education from '@/components/Education.vue';
 import PersonalInfo from '@/components/PersonalInfo.vue';
 import Skills from '@/components/Skills.vue';
 import Work from '@/components/Work.vue';
+import Portfolio from '@/components/Portfolio.vue';
 </script>
 
 <template>
@@ -18,11 +19,19 @@ import Work from '@/components/Work.vue';
     </div>
 
     <div class="main">
-      <div>
+      <div class="section">
         <Work/>
       </div>
 
-      <div>
+      <hr>
+
+      <div class="section">
+        <Portfolio/>
+      </div>
+
+      <hr>
+
+      <div class="section">
         <Education/>
       </div>
     </div>
@@ -52,6 +61,15 @@ import Work from '@/components/Work.vue';
     margin-left: 25%;
     padding: 1em;
     max-width: 75%;
+
+    hr {
+      margin: 1em -1em;
+      border-color: gmap.get($colors, blue, light);
+    }
+
+    .section {
+      margin-top: 1em;
+    }
   }
 }
 </style>

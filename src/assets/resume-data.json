@@ -68,6 +68,14 @@
       ]
     }
   ],
+  "portfolio": [
+    {
+      "title": "Brendan Rates Movies",
+      "link": "https://www.brendanratesmovies.com",
+      "description": "A website I built to track and rate movies that I've watched.",
+      "technologies": [ "VueJS", "Nuxt", "Pinia", "Tailwind CSS", "ChartJS", "Axios", "AWS", "DynamoDB" ]
+    }
+  ],
   "education": [
     {
       "title": "AWS Certified Solutions Architect",
