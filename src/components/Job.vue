@@ -8,7 +8,7 @@ const { item } = defineProps([ 'item' ]);
   </div>
   <div>{{ item.dates }}</div>
 
-  <ul>
+  <ul v-if="item.points && item.points.length">
     <li v-for="(pt, j) in item.points" :key="`${item.title}-point-${j}`">{{ pt }}</li>
   </ul>
 </template>

@@ -26,6 +26,11 @@ const skills = [
   },
   {
     type: 'skill',
+    name: 'Chart.js',
+    rating: 80,
+  },
+  {
+    type: 'skill',
     name: 'NodeJS',
     rating: 70,
   },

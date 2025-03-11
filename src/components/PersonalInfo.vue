@@ -18,7 +18,7 @@ const buttons = [
   {
     text: 'Resume',
     icon: DriveIcon,
-    href: 'https://drive.google.com/file/d/1sBI2f557i-hwYk-QPHbQMqLTUVUg80IG/view',
+    href: 'https://drive.google.com/file/d/1CuPDJHv8Qmfrxj2XW62UVvsw7cNJb9y2/view',
   },
   {
     text: 'Email',
